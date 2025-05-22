@@ -1,0 +1,48 @@
+ - Achy Breaky Heart
+ - Amarillo
+ - Baby, I’d love you to want me
+ - Be my Baby
+ - Beautiful Noise
+ - Beautiful Sunday
+ - Blanket on the ground
+ - Candida
+ - Creedence Clearwater Revival Medley
+ - Country Roads
+ - Crossfire (Himbeereis zum Frühstück)
+ - Dancing Queen
+ - Die Lewwerworscht
+ - Er gehört zu mir
+ - Griechischer Wein
+ - Howard Carpendale Medley (Megafete)
+ - I need more of you
+ - I can’t help falling in love with you
+ - Ich liebe das Leben
+ - Ich war noch niemals in New York
+ - Island in the stream
+ - It´s a real good feeling
+ - Joana
+ - Kung Fu Fighting & Baby, I’d love you to want me
+ - Let your love flow
+ - Living next door to Alice
+ - Long fellow Serenade
+ - Love is in the air
+ - Major Tom Medley   (Neue Deutsche Welle)
+ - Massachusetts
+ - Movie Star
+ - Needles and Pins
+ - No no never
+ - Pfalzlied
+ - Regenbogenfarben
+ - Sahne-Mix -  Udo Jürgens Medley
+ - Sempre,  Sempre
+ - Sonne in der Nacht
+ - Stand by me
+ - Stumblin' in
+ - Sweet Caroline
+ - Tequilla Sunrise
+ - Thank you for the Music
+ - Tornero
+ - Tränen lügen nicht
+ - Über den Wolken
+ - Westernhagen Medley
+ - Wunder gibt es immer wieder

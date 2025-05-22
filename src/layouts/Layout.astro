@@ -14,10 +14,12 @@ import Footer from "../components/footer.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>Holidays 2.0</title>
 	</head>
-	<body>
-	<Header/>
+	<body class="d-flex flex-column min-vh-100">
+	<Header />
+	<div class="container flex-grow-1">
 		<slot />
-	<Footer/>
+	</div>
+	<Footer />
 	</body>
 </html>
 
