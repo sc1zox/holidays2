@@ -1,11 +1,7 @@
+
 html,
 body{
     margin: 0;
     width: 100%;
     height: 100%;
-}
-
-.markdown-body {
-    color: #212529; /* Bootstrap default text color */
-    background: #fff;
 }
