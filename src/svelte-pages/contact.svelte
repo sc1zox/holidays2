@@ -19,12 +19,16 @@
 </div>
 
 <script>
-    // Erfolgsnachricht anzeigen, wenn Formular erfolgreich abgesendet wird
-    const form = document.querySelector('form');
-    const successMessage = document.querySelector('#form-success');
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const successMessage = document.querySelector('#form-success');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        successMessage.style.display = 'block'; // Erfolgsnachricht anzeigen
+        if (form) { // Überprüft, ob das Formular im DOM existiert
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                successMessage.style.display = 'block'; // Erfolgsnachricht anzeigen
+            });
+        }
     });
+
 </script>
