@@ -1,34 +1,16 @@
-<form name="netlify-form-example" method="POST" netlify>
-    <input type="hidden" name="form-name" value="netlify-form-example" />
-
-    <label for="name">Name</label>
-    <input name="name" id="name" required placeholder="Name" type="text" />
-
-    <label for="email">Email</label>
-    <input name="email" id="email" required placeholder="Email" type="email" />
-
-    <label for="message">Message</label>
-    <textarea name="message" id="message" required placeholder="Message"></textarea>
-
-    <input type="submit" value="Submit" />
+<form class="mb-4" name="contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="contact" />
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-Mail</label>
+        <input id="email" name="email" type="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Nachricht</label>
+        <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Absenden</button>
 </form>
-
-<!-- Erfolgsnachricht -->
-<div id="form-success" style="display:none;">
-    <p>Danke! Deine Nachricht wurde erfolgreich gesendet.</p>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('form');
-        const successMessage = document.querySelector('#form-success');
-
-        if (form) { // Überprüft, ob das Formular im DOM existiert
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                successMessage.style.display = 'block'; // Erfolgsnachricht anzeigen
-            });
-        }
-    });
-
-</script>
