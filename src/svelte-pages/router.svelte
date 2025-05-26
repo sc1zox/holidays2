@@ -14,8 +14,6 @@
         '/contact': Contact,
 
     };
-
-    const options = {hashbang: true};
 </script>
 
 <Router {routes} />
