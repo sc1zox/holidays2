@@ -1,11 +1,44 @@
 ---
 import Accordion from '../components/accordion.astro';
 import Layout from '../layouts/Layout.astro';
-import Form from "../components/form.astro";
+import Card from "../components/card.astro";
+
+interface Event {
+    Date: Date;
+    Time: string;
+    Location: string;
+    Link: string;
+}
+
+const events: Event[] = [
+    {
+        Date: new Date("2025-07-04"),
+        Time: "19:30",
+        Location: "Gondelfest in Bobenheim-Roxheim (Festplatz am Altrhein)",
+        Link: 'bsplink',
+    },
+    {
+        Date: new Date("2025-09-20"),
+        Time: "19:30",
+        Location: "Kerwe in Heuchelheim/ Kerweplatz",
+        Link: 'bsplink',
+    },
+    {
+        Date: new Date("2025-09-26"),
+        Time: "19:30",
+        Location: "Kerwe in Bobenheim-Roxheim (Kerweplatz am Rathaus)",
+        Link: 'bsplink',
+    }
+];
 ---
 
-<Layout>
-    <Accordion/>
+<Layout title="Holidays 2.0" content="homepage">
+    <div class="p-2 pt-5">
+        {events.map((event) => (
+                <Card header={event.Date.toDateString() + ' ' + event.Time} title={event.Location} footer={event.Link}/>
+        ))
+        }
+    </div>
 </Layout>
 
 
