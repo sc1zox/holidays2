@@ -60,9 +60,3 @@ body {
     margin-right: 0.7em;
     font-size: 1.2em;
 }
-
-@media (max-width: 600px) {
-    #company-logo {
-        width: 180px;
-    }
-}
