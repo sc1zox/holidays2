@@ -1,5 +1,5 @@
 <form class="mb-4" name="contact-form" method="POST" data-netlify="true">
-    <input type="hidden" name="contact-form" value="contact" />
+    <input type="hidden" name="form-name" value="contact" />
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input id="name" name="name" class="form-control" required />
