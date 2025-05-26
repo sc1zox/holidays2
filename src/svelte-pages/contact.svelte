@@ -1,4 +1,4 @@
-<form class="mb-4" name="contact-form" method="POST" data-netlify="true">
+<form class="mb-4" name="contact" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="contact" />
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
