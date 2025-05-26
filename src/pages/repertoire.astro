@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RepertoireContent from "../content/repertoire.md";
+import "../styles/repertoire.css"
 ---
-<Layout>
-    <div class="container">
+<Layout title="Repertoire" content="Liederrepertoire der Holidays">
+    <div class="repertoire-markdown">
+        <div class="song-list">
         <RepertoireContent/>
+        </div>
     </div>
 </Layout>

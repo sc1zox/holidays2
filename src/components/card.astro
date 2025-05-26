@@ -1,0 +1,19 @@
+---
+interface Props {
+    header: string,
+    title: string,
+    footer: string,
+}
+const {header,title,footer} = Astro.props;
+---
+<div class="card text-center my-5">
+    <div class="card-body">
+        <div class="py-2">
+        {header}
+        </div>
+        <h5 class="card-title">{title}</h5>
+    </div>
+    <div class="card-footer text-muted">
+        {footer}
+    </div>
+</div>
