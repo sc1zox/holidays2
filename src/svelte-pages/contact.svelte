@@ -12,19 +12,3 @@
 
     <input type="submit" value="Submit" />
 </form>
-
-<!-- Erfolgsnachricht -->
-<div id="form-success" style="display:none;">
-    <p>Danke! Deine Nachricht wurde erfolgreich gesendet.</p>
-</div>
-
-<script>
-    // Erfolgsnachricht anzeigen, wenn Formular erfolgreich abgesendet wird
-    const form = document.querySelector('form');
-    const successMessage = document.querySelector('#form-success');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        successMessage.style.display = 'block'; // Erfolgsnachricht anzeigen
-    });
-</script>
