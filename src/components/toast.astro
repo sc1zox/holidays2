@@ -28,7 +28,9 @@ const time = new Date()
     document.addEventListener('DOMContentLoaded', () => {
 
         const btn = document.getElementById('contact')
-        btn.addEventListener('click',()=> window.location.href = '/contact')
+        if (btn) {
+            btn.addEventListener('click', () => window.location.href = '/contact')
+        }
 
         let shown = window.sessionStorage.getItem('toast') === 'true';
         const toastLive = document.getElementById('liveToast');
