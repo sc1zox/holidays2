@@ -1,39 +1,9 @@
-.contact-form {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.contact-form:hover {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
-}
-
-.form-control {
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-    transition: all 0.2s;
-}
-
 .form-control:focus {
     box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
     border-color: #28a745;
 }
 
-.submit-button {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(40, 167, 69, 0.4);
-    transition: all 0.3s;
-}
-
-.submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
-}
-
-.form-label {
-    color: #495057;
+#contact-form {
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }

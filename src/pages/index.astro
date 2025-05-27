@@ -78,7 +78,7 @@ const events: Event[] = [
     <h2 class="text-center">Auftritte</h2>
     <div class="d-flex flex-column justify-content-center align-items-center">
         {events.map((event) => (
-                <Card header={event.Date.toLocaleDateString() + ' ' + event.Time} title={event.Event}
+                <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
                       address={event.Location}
                       linkToEvent={event.Link}/>
         ))
