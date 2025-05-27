@@ -38,11 +38,13 @@ const time = new Date()
 
         if (toastLive && !shown) {
             setTimeout(async () => {
-                const toast = new bootstrap.Toast(toastLive);
+                const toast = new bootstrap.Toast(toastLive,{
+                    delay: 20000,
+                });
                 toast.show();
                 shown = true;
                 window.sessionStorage.setItem('toast', shown.toString())
-            }, 5000);
+            }, 3000);
         }
     });
 </script>
