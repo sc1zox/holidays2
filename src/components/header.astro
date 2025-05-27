@@ -1,9 +1,10 @@
 ---
 import HeaderContent from "./headerContent.astro"
+import "../styles/header.css"
 ---
-<div class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light mb-3 sticky-top">
-        <div class="container-fluid ps-5 pt-lg-0 pt-5 d-flex justify-content-end">
+<div class="navbar-container fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light mb-3">
+        <div class="container-fluid px-5 pt-lg-0 pt-5 d-flex justify-content-end">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex gap-5">
                     <li class="nav-item fs-4">
@@ -26,9 +27,23 @@ import HeaderContent from "./headerContent.astro"
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand d-lg-flex d-none" href="/">
-                <img src="/Logo.svg" alt="logo" id="logo" width="300" height="160">
+                <img src="/Logo.svg" alt="logo" id="logo" width="350" height="210" >
             </a>
         </div>
     </nav>
     <HeaderContent/>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbarContainer = document.querySelector('.navbar-container');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbarContainer.classList.add('transparent');
+            } else {
+                navbarContainer.classList.remove('transparent');
+            }
+        });
+    });
+</script>

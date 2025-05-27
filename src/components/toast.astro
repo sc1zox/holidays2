@@ -1,0 +1,38 @@
+---
+interface Props {
+    message: string,
+    title: string,
+}
+
+const {message,title} = Astro.props;
+const time = new Date()
+---
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">{title}</strong>
+            <small>{time.toLocaleTimeString()}</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {message}
+        </div>
+    </div>
+</div>
+
+<script>
+    let shown = false;
+    document.addEventListener('DOMContentLoaded', () => {
+        let shown = window.sessionStorage.getItem('toast') === 'true';
+        const toastLive = document.getElementById('liveToast');
+
+        if (toastLive && !shown) {
+            setTimeout(async () => {
+                const toast = new bootstrap.Toast(toastLive);
+                toast.show();
+                shown = true;
+                window.sessionStorage.setItem('toast',shown.toString())
+            },5000);
+        }
+    });
+</script>

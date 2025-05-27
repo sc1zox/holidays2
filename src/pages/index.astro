@@ -1,7 +1,11 @@
 ---
-import Accordion from '../components/accordion.astro';
 import Layout from '../layouts/Layout.astro';
 import Card from "../components/card.astro";
+import TextImageSection from "../components/textImageSection.astro";
+import Gerald from "../assets/gerald_profile.png"
+import Bernd from "../assets/bernd_profile.png"
+import Juergen from "../assets/juergen_profile.png"
+import Toast from "../components/toast.astro";
 
 interface Event {
     Date: Date;
@@ -34,8 +38,20 @@ const events: Event[] = [
 
 <Layout title="Holidays 2.0" content="homepage">
     <div class="p-2 pt-5">
+        <Toast message="Nachricht" title="Titel"/>
+        <section class="mb-5">
+            <h1 class="text-center mb-3"> Das sind wir </h1>
+            <TextImageSection headline="Headline" imgSrc={Gerald.src} alt="Logo" paragraph="Paragraph lorem ipsum lorem ipsum" orientation="image-right" bgColor="bg-light"/>
+            <TextImageSection headline="Headline" imgSrc={Bernd.src} alt="Logo" paragraph="Paragraph lorem ipsum lorem ipsum" orientation="image-left"/>
+            <TextImageSection headline="Headline" imgSrc={Juergen.src} alt="Logo" paragraph="Paragraph lorem ipsum lorem ipsum" orientation="image-right" bgColor="bg-light"/>
+        </section>
+
+
+        <h2 class="text-center">Auftritte</h2>
+
         {events.map((event) => (
-                <Card header={event.Date.toDateString() + ' ' + event.Time} title={event.Location} footer={event.Link}/>
+                <Card header={event.Date.toLocaleDateString() + ' ' + event.Time} title={event.Location}
+                      footer={event.Link}/>
         ))
         }
     </div>

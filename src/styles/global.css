@@ -6,3 +6,6 @@ body{
     overscroll-behavior-y: none ;
     scroll-behavior: smooth;
 }
+#main-content {
+    margin-top: 30vh;
+}

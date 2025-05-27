@@ -1,0 +1,24 @@
+---
+interface Props {
+    headline: string,
+    imgSrc: string,
+    alt: string,
+    paragraph: string,
+    orientation: string,
+    bgColor: string,
+}
+const {headline,imgSrc,alt,paragraph, orientation,bgColor} = Astro.props;
+const sectionClass = orientation === "image-left"
+    ? "container w-100 d-flex justify-content-between align-items-center flex-row flex-row-reverse p-0"
+    : "container w-100 d-flex justify-content-between align-items-center flex-row p-0";
+const combinedClass = `my-1 ${bgColor}`
+---
+<div class={combinedClass}>
+    <section class={sectionClass}>
+        <div class="d-flex d-flex justify-content-start align-items-center flex-column text-break p-2">
+            <h2>{headline}</h2>
+            <p>{paragraph}</p>
+        </div>
+        <img src={imgSrc} alt={alt} width="250px" class="img-fluid rounded">
+    </section>
+</div>
