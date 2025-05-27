@@ -6,25 +6,36 @@ import "../styles/bootstrap_extension.css"
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
 
-const {title = 'default',content = 'defaultContent'} = Astro.props;
+interface Props {
+    title: string,
+    content: string,
+    fluid: boolean,
+}
+
+const {title = 'default', content = 'defaultContent', fluid = false} = Astro.props;
+
+const mainClass = fluid === true ? "container-fluid" : "container"
 ---
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="description" content={content}/>
-		<title>{title}</title>
-	</head>
-	<body class="d-flex flex-column min-vh-100">
-	<div class="mb-3">
-		<Header />
-	</div>
-	<div class="container flex-grow-1" id="main-content">
-		<slot />
-	</div>
-	<Footer />
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="description" content={content}/>
+    <meta name="author" content="https://github.com/sc1zox"/>
+    <title>{title}</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<header class="mb-3">
+    <Header/>
+</header>
+<main class={mainClass} id="main-content">
+    <slot/>
+</main>
+<Footer/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
 </html>

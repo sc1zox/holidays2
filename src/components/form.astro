@@ -1,24 +1,28 @@
 ---
-
+import "../styles/form.css"
 ---
-<div class="container p-3 w-100 w-lg-50">
+<div class="container py-3 w-100 w-lg-50" id="contact-form">
     <form name="contact-form" netlify>
-        <div class="mb-3">
-            <label for="vorname" class="form-label">Vorname</label>
-            <input type="text" class="form-control" id="vorname" name="vorname" aria-describedby="vorname"/>
+        <div class="form-group">
+            <div class="mb-3">
+                <label for="vorname" class="form-label">Vorname</label>
+                <input type="text" class="form-control" id="vorname" name="vorname" aria-describedby="vorname"/>
+            </div>
+            <div class="mb-3">
+                <label for="nachname" class="form-label">Nachname</label>
+                <input type="text" class="form-control" id="nachname" name="nachname" aria-describedby="nachname"/>
+            </div>
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Ihre Nachricht</label>
+                <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="nachname" class="form-label">Nachname</label>
-            <input type="text" class="form-control" id="nachname" name="nachname" aria-describedby="nachname"/>
+        <div class="form-divider">
+            <button type="submit" class="btn btn-primary">Abschicken</button>
         </div>
-        <div class="mb-3">
-            <label for="emailInput" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Ihre Nachricht</label>
-            <textarea class="form-control" id="message" rows="3" name="message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Abschicken</button>
     </form>
 </div>

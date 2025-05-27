@@ -6,10 +6,12 @@ import Gerald from "../assets/gerald_profile.png"
 import Bernd from "../assets/bernd_profile.png"
 import Juergen from "../assets/juergen_profile.png"
 import Toast from "../components/toast.astro";
+import TextBanner from "../components/textBanner.astro";
 
 interface Event {
     Date: Date;
     Time: string;
+    Event: string,
     Location: string;
     Link: string;
 }
@@ -18,40 +20,67 @@ const events: Event[] = [
     {
         Date: new Date("2025-07-04"),
         Time: "19:30",
+        Event: "Gondelfest in Bobenheim-Roxheim",
         Location: "Gondelfest in Bobenheim-Roxheim (Festplatz am Altrhein)",
-        Link: 'bsplink',
+        Link: "https://www.bobenheim-roxheim.de/gemeinde_bobenheim_roxheim/B%C3%BCrgerservice/Veranstaltungskalender/2025/04.07.2025%20-%2007.07.2025%20Gondelfest/",
     },
     {
         Date: new Date("2025-09-20"),
         Time: "19:30",
+        Event: "Kerwe in Heuchelheim",
         Location: "Kerwe in Heuchelheim/ Kerweplatz",
-        Link: 'bsplink',
+        Link: "https://heuchelheimbeifrankenthal.de/2024/01/06/termine-2024/",
     },
     {
         Date: new Date("2025-09-26"),
         Time: "19:30",
+        Event: "Kerwe in Bobenheim-Roxheim",
         Location: "Kerwe in Bobenheim-Roxheim (Kerweplatz am Rathaus)",
-        Link: 'bsplink',
+        Link: "https://www.bobenheim-roxheim.de/gemeinde_bobenheim_roxheim/B%C3%BCrgerservice/Veranstaltungskalender/2025/26.09.2025%20-%2029.09.2025%20Kerwe%20Bobenheim-Roxheim/",
     }
 ];
 ---
 
-<Layout title="Holidays 2.0" content="homepage">
-    <div class="p-2 pt-5">
-        <Toast message="Nachricht" title="Titel"/>
-        <section class="mb-5">
-            <h1 class="text-center mb-3"> Das sind wir </h1>
-            <TextImageSection headline="Headline" imgSrc={Gerald.src} alt="Logo" paragraph="Paragraph lorem ipsum lorem ipsum" orientation="image-right" bgColor="bg-light"/>
-            <TextImageSection headline="Headline" imgSrc={Bernd.src} alt="Logo" paragraph="Paragraph lorem ipsum lorem ipsum" orientation="image-left"/>
-            <TextImageSection headline="Headline" imgSrc={Juergen.src} alt="Logo" paragraph="Paragraph lorem ipsum lorem ipsum" orientation="image-right" bgColor="bg-light"/>
-        </section>
-
-
-        <h2 class="text-center">Auftritte</h2>
-
+<Layout title="Holidays 2.0 – Cover-Band aus Bobenheim-Roxheim für regionale Feste"
+        content="Die Band Holidays 2.0 aus Bobenheim-Roxheim bietet mit ihrem einzigartigen Cover-Programm Musik für jedes Fest in der Pfalz. Jetzt für dein Event buchen!"
+        fluid={true}>
+    <Toast message="Nachricht" title="Titel"/>
+    <TextBanner
+            headline="Herzlich Willkommen auf unserer Webseite! Wir freuen uns, dass Sie den Weg zu uns gefunden haben."
+            subline="Sie sind auf der Suche nach einer professionellen Live-Cover-Band für Ihre Veranstaltung in der Vorderpfalz?"
+            paragraph="Ihre Suche hat eine Ende!"/>
+    <h2 class="fs-4">
+    </h2>
+    <h3 class="fs-5">
+    </h3>
+    <section class="mb-5">
+        <h1 class="text-center my-5 py-2"> The Holidays 2.0 direkt auf einen Blick </h1>
+        <TextImageSection headline="Gerald Ingermann" imgSrc={Gerald.src}
+                          alt="Porträt von Gerald Ingermann (Keyboard & Gesang)"
+                          paragraph="Keyboard & Gesang" orientation="image-right"
+                          bgColor="bg-light"/>
+        <TextImageSection headline="Bernd Reichenbach" imgSrc={Bernd.src}
+                          alt="Porträt von Bernd Reichenbach (Schlagzeug & Gesang)"
+                          paragraph="Schlagzeug & Gesang" orientation="image-left"/>
+        <TextImageSection headline="Jürgen Hällmeyer" imgSrc={Juergen.src}
+                          alt="Porträt von Jürgen Hällmeyer (Gitarre & Gesang)"
+                          paragraph="Gitarre & Gesang" orientation="image-right"
+                          bgColor="bg-light"/>
+    </section>
+    <div class="d-flex justify-content-center align-items-center">
+        <p class="w-50 text-center">
+            Ob Weinfest, Vinothek, Hochzeit, Geburtstag, Oper-Air-Fete oder Firmenevent, wir sorgen für die richtige
+            Stimmung.
+            Dabei legen wir großen Wert auf den Musikgeschmack der anwesenden Gäste.
+            Über ein Engagement Ihrerseits würden wir uns sehr freuen, Sie werden es nicht bereuen.
+        </p>
+    </div>
+    <h2 class="text-center">Auftritte</h2>
+    <div class="d-flex flex-column justify-content-center align-items-center">
         {events.map((event) => (
-                <Card header={event.Date.toLocaleDateString() + ' ' + event.Time} title={event.Location}
-                      footer={event.Link}/>
+                <Card header={event.Date.toLocaleDateString() + ' ' + event.Time} title={event.Event}
+                      address={event.Location}
+                      linkToEvent={event.Link}/>
         ))
         }
     </div>

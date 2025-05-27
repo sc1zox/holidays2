@@ -1,19 +1,21 @@
 ---
+import MapsDirection from "./mapsDirection.astro";
 interface Props {
     header: string,
     title: string,
-    footer: string,
+    address: string,
+    linkToEvent: string,
 }
-const {header,title,footer} = Astro.props;
+const {header,title,address,linkToEvent} = Astro.props;
 ---
-<div class="card text-center my-5">
+<div class="card text-center my-5 w-lg-50">
     <div class="card-body">
         <div class="py-2">
         {header}
         </div>
         <h5 class="card-title">{title}</h5>
     </div>
-    <div class="card-footer text-muted">
-        {footer}
+<div class="card-footer text-muted d-flex gap-5 justify-content-center align-items-center">
+        <a href={linkToEvent} class="link-info">Homepage</a> <MapsDirection address={address} />
     </div>
 </div>

@@ -1,0 +1,14 @@
+---
+interface Props {
+    headline: string,
+    subline: string,
+    paragraph: string,
+}
+
+const {headline, subline, paragraph} = Astro.props;
+---
+<div class="bg-success bg-gradient w-100 d-flex flex-column justify-content-center align-items-center p-3 text-white">
+    <h1 class="display-7 text-center">{headline}</h1>
+    <h2 class="display-8 text-center">{subline}</h2>
+    <p class="display-10 text-center">{paragraph}</p>
+</div>

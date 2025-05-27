@@ -1,3 +1,41 @@
+.fs-6 {
+    font-size: 1rem !important;
+}
+.fs-7 {
+    font-size: 0.875rem !important;
+}
+.fs-8 {
+    font-size: 0.75rem !important;
+}
+.fs-9 {
+    font-size: 0.625rem !important;
+}
+.fs-10 {
+    font-size: 0.5rem !important;
+}
+
+.display-7 {
+    font-size: 2rem !important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.display-8 {
+    font-size: 1.75rem !important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.display-9 {
+    font-size: 1.5rem !important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.display-10 {
+    font-size: 1.25rem !important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+
 .responsive-text {
     font-size: 1rem;
 }

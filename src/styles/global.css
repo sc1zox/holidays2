@@ -1,11 +1,41 @@
 html,
-body{
+body {
     margin: 0;
     width: 100%;
     height: 100%;
-    overscroll-behavior-y: none ;
+    overscroll-behavior-y: none;
     scroll-behavior: smooth;
 }
+
+.container-fluid {
+    padding: 0 !important;
+}
+
 #main-content {
     margin-top: 30vh;
+}
+
+
+
+@media screen and (max-height: 700px) {
+    #main-content {
+        margin-top: 35vh;
+    }
+}
+
+@media screen and (max-height: 1100px) {
+    #main-content {
+        margin-top: 35vh;
+    }
+}
+
+@media screen and (min-height: 1100px) {
+    #main-content {
+        margin-top: 25vh;
+    }
+
+
+    #contact-form {
+        padding: 0 100px;
+    }
 }
