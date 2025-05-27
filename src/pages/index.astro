@@ -44,7 +44,7 @@ const events: Event[] = [
 <Layout title="Holidays 2.0 – Cover-Band aus Bobenheim-Roxheim für regionale Feste"
         content="Die Band Holidays 2.0 aus Bobenheim-Roxheim bietet mit ihrem einzigartigen Cover-Programm Musik für jedes Fest in der Pfalz. Jetzt für dein Event buchen!"
         fluid={true}>
-    <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!"/>
+    <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!" destination="/kontakt"/>
     <TextBanner
             headline="Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Ihre Live-Cover Band aus Bobenheim-Roxheim in der Pfalz"
             subline="Sie sind auf der Suche nach einer professionellen Live-Cover-Band für Ihre Veranstaltung oder regionalen Feste in der Vorderpfalz?"
@@ -61,7 +61,8 @@ const events: Event[] = [
                           bgColor="bg-light"/>
         <TextImageSection headline="Bernd Reichenbach" imgSrc={Bernd.src}
                           alt="Porträt von Bernd Reichenbach (Schlagzeug & Gesang)"
-                          paragraph="Schlagzeug & Gesang" orientation="image-left"/>
+                          paragraph="Schlagzeug & Gesang" orientation="image-left"
+                          bgColor=""/>
         <TextImageSection headline="Jürgen Hällmeyer" imgSrc={Juergen.src}
                           alt="Porträt von Jürgen Hällmeyer (Gitarre & Gesang)"
                           paragraph="Gitarre & Gesang" orientation="image-right"
