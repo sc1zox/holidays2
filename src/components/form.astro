@@ -1,26 +1,68 @@
 ---
-import "../styles/form.css"
+import '../styles/form.css'
 ---
-<div class="container py-5 w-100 w-lg-50" id="contact-form">
-    <form name="contact-form" netlify>
-            <div class="mb-3">
-                <label for="vorname" class="form-label">Vorname</label>
-                <input type="text" class="form-control" id="vorname" name="vorname" aria-describedby="vorname"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<div class="container">
+    <div class="contact__wrapper shadow-lg mt-n9">
+        <div class="row no-gutters">
+            <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
+                <h3 class="color--white mb-5">Direkt in Kontakt treten</h3>
+
+                <ul class="contact-info__list list-style--none position-relative z-index-101">
+                    <li class="mb-4 pl-4">
+                        <span class="position-absolute"><i class="fas fa-envelope"></i></span> gerald.ingermann@outlook.com
+                    </li>
+                    <li class="mb-4 pl-4">
+                        <span class="position-absolute"><i class="fas fa-phone"></i></span> 06359/9613017
+                    </li>
+                </ul>
             </div>
-            <div class="mb-3">
-                <label for="nachname" class="form-label">Nachname</label>
-                <input type="text" class="form-control" id="nachname" name="nachname" aria-describedby="nachname"/>
+
+            <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                <form class="contact-form form-validate" name="contact-form" netlify>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="firstName">Vorname</label>
+                                <input type="text" class="form-control" id="firstName" name="Vorname" placeholder="Max">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="lastName">Nachname</label>
+                                <input type="text" class="form-control" id="lastName" name="Nachname" placeholder="Mustermann">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="max.mustermann@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="phone">Telefonnummer</label>
+                                <input type="tel" class="form-control" id="phone" name="Telefonnummer" placeholder="+49....">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="message">Ihre Anfrage</label>
+                                <textarea class="form-control" id="message" name="Nachricht" rows="4" placeholder="Hallo ich würde sie gerne buchen für....."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 mb-3">
+                            <button type="submit" name="submit" class="btn btn-primary">Abschicken</button>
+                        </div>
+
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="emailInput" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Ihre Nachricht</label>
-                <textarea class="form-control" id="message" rows="3" name="message"></textarea>
-            </div>
-        <div class="form-divider">
-            <button type="submit" class="btn btn-primary">Abschicken</button>
         </div>
-    </form>
+    </div>
 </div>

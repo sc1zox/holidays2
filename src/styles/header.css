@@ -1,9 +1,5 @@
 .navbar-nav .nav-link {
     position: relative;
-    padding-bottom: 5px;
-    color: #333;
-    transition: color 0.3s ease;
-    font-weight: 500;
 }
 
 .navbar-nav .nav-link::after {
@@ -13,7 +9,7 @@
     left: 0;
     height: 2px;
     width: 0%;
-    background-color: #0d6efd; /* Bootstrap primary */
+    background-color: #0d6efd;
     transition: width 0.3s ease;
 }
 
@@ -42,5 +38,8 @@
     }
     .collapse {
         padding-top: 20px !important;
+    }
+    .navbar-container.transparent {
+        background-color: rgba(248, 249, 250, 1);
     }
 }

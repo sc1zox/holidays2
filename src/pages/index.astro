@@ -44,7 +44,7 @@ const events: Event[] = [
 <Layout title="Holidays 2.0 – Cover-Band aus Bobenheim-Roxheim für regionale Feste"
         content="Die Band Holidays 2.0 aus Bobenheim-Roxheim bietet mit ihrem einzigartigen Cover-Programm Musik für jedes Fest in der Pfalz. Jetzt für dein Event buchen!"
         fluid={true}>
-    <Toast message="Nachricht" title="Titel"/>
+    <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!"/>
     <TextBanner
             headline="Herzlich Willkommen auf unserer Webseite! Wir freuen uns, dass Sie den Weg zu uns gefunden haben."
             subline="Sie sind auf der Suche nach einer professionellen Live-Cover-Band für Ihre Veranstaltung in der Vorderpfalz?"
@@ -53,8 +53,8 @@ const events: Event[] = [
     </h2>
     <h3 class="fs-5">
     </h3>
-    <section class="mb-5">
-        <h1 class="text-center my-5 py-2"> The Holidays 2.0 direkt auf einen Blick </h1>
+    <section>
+        <h1 class="text-center my-5 py-2 display-6"> The Holidays 2.0 direkt auf einen Blick </h1>
         <TextImageSection headline="Gerald Ingermann" imgSrc={Gerald.src}
                           alt="Porträt von Gerald Ingermann (Keyboard & Gesang)"
                           paragraph="Keyboard & Gesang" orientation="image-right"
@@ -67,23 +67,27 @@ const events: Event[] = [
                           paragraph="Gitarre & Gesang" orientation="image-right"
                           bgColor="bg-light"/>
     </section>
-    <div class="d-flex justify-content-center align-items-center">
-        <p class="w-50 text-center">
+    <div class="d-flex justify-content-center align-items-center py-5">
+        <p class="w-100 w-lg-50 text-center fs-4">
             Ob Weinfest, Vinothek, Hochzeit, Geburtstag, Oper-Air-Fete oder Firmenevent, wir sorgen für die richtige
             Stimmung.
             Dabei legen wir großen Wert auf den Musikgeschmack der anwesenden Gäste.
             Über ein Engagement Ihrerseits würden wir uns sehr freuen, Sie werden es nicht bereuen.
         </p>
     </div>
-    <h2 class="text-center">Auftritte</h2>
-    <div class="d-flex flex-column justify-content-center align-items-center">
-        {events.map((event) => (
-                <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
-                      address={event.Location}
-                      linkToEvent={event.Link}/>
-        ))
-        }
-    </div>
+    <section class="bg-dark bg-gradient py-3">
+
+        <h2 class="text-center text-white display-6">Auftritte</h2>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            {events.map((event) => (
+                    <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
+                          address={event.Location}
+                          linkToEvent={event.Link}/>
+            ))
+            }
+        </div>
+    </section>
+
 </Layout>
 
 

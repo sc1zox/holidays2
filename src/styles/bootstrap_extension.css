@@ -44,13 +44,24 @@
     font-size: 1.5rem;
 }
 
-@media (min-width: 768px) {
+
+@media (max-width: 768px) {
     .responsive-text {
-        font-size: 1.25rem;
+       font-size: 1.3rem !important;
     }
 
     .responsive-headline {
-        font-size: 1.8rem;
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .responsive-text {
+        font-size: 1.75rem !important;
+    }
+
+    .responsive-headline {
+        font-size: 2rem !important;
     }
 }
 
@@ -59,11 +70,64 @@
         width: 50% !important;
     }
 
+    .w-lg-35 {
+        width: 35% !important;
+    }
+
+    .w-lg-25 {
+        width: 25% !important;
+    }
+
     .responsive-text {
-        font-size: 1.5rem;
+        font-size: 2rem !important;
     }
 
     .responsive-headline {
-        font-size: 2.2rem;
+        font-size: 2.8rem !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .w-xl-50 {
+        width: 50% !important;
+    }
+
+    .w-xl-35 {
+        width: 35% !important;
+    }
+
+    .w-xl-25 {
+        width: 25% !important;
+    }
+
+    .responsive-text {
+        font-size: 2rem !important;
+    }
+
+    .responsive-headline {
+        font-size: 2.8rem !important;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .w-xxl-50 {
+        width: 50% !important;
+    }
+
+    .w-xxl-35 {
+        width: 35% !important;
+    }
+
+    .w-xxl-25 {
+        width: 25% !important;
+    }
+
+    .responsive-text {
+        font-size: 2rem !important;
+    }
+
+    .responsive-headline {
+        font-size: 2.8rem !important;
     }
 }
