@@ -4,7 +4,7 @@ interface Props {
     title: string,
 }
 
-const {message,title} = Astro.props;
+const {message, title} = Astro.props;
 const time = new Date()
 ---
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -15,7 +15,10 @@ const time = new Date()
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            {message}
+            <div class="d-flex flex-column">
+                <p>{message}</p>
+                <button type="button" id="contact" class="btn btn-primary btn-sm">Kontaktieren</button>
+            </div>
         </div>
     </div>
 </div>
@@ -31,8 +34,8 @@ const time = new Date()
                 const toast = new bootstrap.Toast(toastLive);
                 toast.show();
                 shown = true;
-                window.sessionStorage.setItem('toast',shown.toString())
-            },5000);
+                window.sessionStorage.setItem('toast', shown.toString())
+            }, 5000);
         }
     });
 </script>

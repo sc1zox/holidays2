@@ -35,3 +35,9 @@
 .navbar-container.transparent {
     background-color: rgba(248, 249, 250, 0.8);
 }
+
+@media (max-width: 992px) {
+    #logoMobile {
+        max-width: 150px;
+    }
+}
