@@ -2,7 +2,7 @@
 import "../styles/header.css"
 ---
 <nav class="navbar fixed-top navbar-container navbar-expand-lg navbar-light mb-3">
-    <div class="container-fluid px-5 pt-lg-0 pt-0 d-flex justify-content-end">
+    <div class="container-fluid px-3 pt-lg-0 pt-0 d-flex justify-content-end">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-5 mb-lg-0 d-flex gap-5">
                 <li class="nav-item fs-4">
@@ -24,7 +24,8 @@ import "../styles/header.css"
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                id="navbarExpand">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand d-lg-flex d-none" href="/">
@@ -35,15 +36,63 @@ import "../styles/header.css"
 
 
 <script>
+    let navBarOpen: boolean = false;
     document.addEventListener('DOMContentLoaded', () => {
         const navbarContainer = document.querySelector('.navbar-container');
+        let lastScrollTop = 0;
+        let scrollLength = window.scrollY;
+        let scrollUp = false;
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50 && navbarContainer) {
+            const upwardAmount = trackUpwardScroll();
+
+            const scrollTop = window.scrollY;
+
+            if (scrollTop > 50 && navbarContainer && window.innerWidth > 992) {
                 navbarContainer.classList.add('transparent');
             } else if (navbarContainer) {
                 navbarContainer.classList.remove('transparent');
             }
+
+            if (navbarContainer) {
+                if (scrollTop > 100 && !scrollUp) {
+                    navbarContainer.classList.add('navbar-compact');
+                } else if (upwardAmount > 50 || scrollTop < 100) {
+                    navbarContainer.classList.remove('navbar-compact');
+                }
+            }
         });
+
+        const expandButton = document.getElementById('navbarExpand');
+        if (expandButton && navbarContainer) {
+            expandButton.addEventListener('click', () => {
+                navBarOpen = !navBarOpen;
+                navbarContainer.classList.remove('navbar-compact');
+                navbarContainer.classList.remove('container-fluid');
+                if (!navBarOpen && lastScrollTop > 400) {
+                    navbarContainer.classList.add('navbar-compact');
+                }
+            })
+        }
+
+        function trackUpwardScroll() {
+            const currentPosition = window.scrollY;
+            let upwardScrollAmount = 0;
+
+            if (currentPosition < lastScrollTop) {
+                upwardScrollAmount = lastScrollTop - currentPosition;
+                scrollUp = true;
+
+                if (upwardScrollAmount > 100) {
+                    navbarContainer?.classList.remove('navbar-compact');
+                }
+            } else {
+                scrollUp = false;
+            }
+
+            lastScrollTop = currentPosition;
+
+            return upwardScrollAmount;
+        }
     });
 </script>

@@ -10,7 +10,8 @@ import '../styles/form.css'
 
                 <ul class="contact-info__list list-style--none position-relative z-index-101">
                     <li class="mb-4 pl-4">
-                        <span class="position-absolute"><i class="fas fa-envelope"></i></span> gerald.ingermann@outlook.com
+                        <span class="position-absolute"><i class="fas fa-envelope"></i></span>
+                        gerald.ingermann@outlook.com
                     </li>
                     <li class="mb-4 pl-4">
                         <span class="position-absolute"><i class="fas fa-phone"></i></span> 06359/9613017
@@ -19,50 +20,124 @@ import '../styles/form.css'
             </div>
 
             <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
-                <form class="contact-form form-validate" name="contact-form" netlify>
+                <form name="contact-form" id="contact-form" netlify>
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <div class="form-group">
-                                <label class="required-field" for="firstName">Vorname</label>
-                                <input type="text" class="form-control" id="firstName" name="Vorname" placeholder="Max">
+                                <label for="vorname">Vorname*</label>
+                                <input type="text" class="form-control" id="vorname" name="Vorname" placeholder="Max"
+                                       required>
                             </div>
                         </div>
 
                         <div class="col-sm-6 mb-3">
                             <div class="form-group">
-                                <label for="lastName">Nachname</label>
-                                <input type="text" class="form-control" id="lastName" name="Nachname" placeholder="Mustermann">
+                                <label for="nachname">Nachname*</label>
+                                <input type="text" class="form-control" id="nachname" name="Nachname"
+                                       placeholder="Mustermann" required>
                             </div>
                         </div>
 
                         <div class="col-sm-6 mb-3">
                             <div class="form-group">
-                                <label class="required-field" for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="max.mustermann@gmail.com">
+                                <label for="email">Email*</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       placeholder="max.mustermann@gmail.com" required>
                             </div>
                         </div>
 
                         <div class="col-sm-6 mb-3">
                             <div class="form-group">
                                 <label for="phone">Telefonnummer</label>
-                                <input type="tel" class="form-control" id="phone" name="Telefonnummer" placeholder="+49....">
+                                <input type="tel" class="form-control" id="phone" name="Telefonnummer"
+                                       placeholder="+49....">
                             </div>
                         </div>
 
                         <div class="col-sm-12 mb-3">
                             <div class="form-group">
-                                <label class="required-field" for="message">Ihre Anfrage</label>
-                                <textarea class="form-control" id="message" name="Nachricht" rows="4" placeholder="Hallo ich würde sie gerne buchen für....."></textarea>
+                                <label for="message">Ihre Anfrage</label>
+                                <textarea class="form-control" id="message" name="Nachricht" rows="4"
+                                          placeholder="Hallo ich würde sie gerne buchen für....."></textarea>
                             </div>
                         </div>
 
-                        <div class="col-sm-12 mb-3">
-                            <button type="submit" name="submit" class="btn btn-primary">Abschicken</button>
-                        </div>
+                        <p class="fs-8" id="hint">* diese Felder sind Pflichtfelder!</p>
 
+                        <div class="col-sm-12 mb-3">
+                            <button type="submit" name="submit" id="submitButton" class="btn btn-primary" disabled>
+                                Abschicken
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const submitButton = document.getElementById('submitButton') as HTMLButtonElement;
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const hint = document.getElementById('hint') as HTMLElement;
+
+    if (submitButton && form) {
+        const emailField: HTMLFormElement = form.email;
+        const vornameField: HTMLFormElement = form.vorname;
+        const nachnameField: HTMLFormElement = form.nachname;
+        const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ][-'A-Za-zÀ-ÖØ-öø-ÿ\s]{1,48}$/;
+
+        const requiredFields: HTMLFormElement[] = [];
+        requiredFields.push(emailField);
+        requiredFields.push(vornameField);
+        requiredFields.push(nachnameField);
+
+        buttonState(requiredFields);
+        for (const field of requiredFields) {
+            markFormFieldAsInvalid(field);
+        }
+
+        vornameField.addEventListener('input', () => {
+            markFormFieldAsInvalid(vornameField);
+            buttonState(requiredFields)
+        })
+        nachnameField.addEventListener('input', () => {
+            markFormFieldAsInvalid(nachnameField);
+            buttonState(requiredFields)
+        })
+        emailField.addEventListener('input', () => {
+            markFormFieldAsInvalid(emailField);
+            buttonState(requiredFields)
+        })
+
+        function buttonState(fields: HTMLFormElement[]): void {
+            for (const field of fields) {
+                if (field.checkValidity() === false || (field.value.length > 0 && field.value.trim().length === 0)) {
+                    submitButton.disabled = true;
+                    return;
+                }
+            }
+            submitButton.disabled = false;
+        }
+
+        function markFormFieldAsInvalid(field: HTMLFormElement): void {
+            let valid = true;
+            if (field.value.length > 0) {
+                if (field.checkValidity() === false) {
+                    valid = false;
+                } else if (field.value.trim().length === 0) {
+                    valid = false;
+                } else valid = !((field.id === 'vorname' || field.id === 'nachname') &&
+                    !nameRegex.test(field.value));
+            }
+            if (valid) {
+                field.classList.remove('invalid');
+                hint.classList.remove('invalid-text');
+            } else {
+                field.classList.add('invalid');
+                hint.classList.add('invalid-text');
+            }
+
+        }
+    }
+</script>
