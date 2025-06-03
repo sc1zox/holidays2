@@ -54,7 +54,7 @@ import "../styles/header.css"
             }
 
             if (navbarContainer) {
-                if (scrollTop > 100 && !scrollUp) {
+                if (scrollTop > 100 && !scrollUp && !navBarOpen) {
                     navbarContainer.classList.add('navbar-compact');
                 } else if (upwardAmount > 50 || scrollTop < 100) {
                     navbarContainer.classList.remove('navbar-compact');

@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 0%;
+    width: 0;
     background-color: #0d6efd;
     transition: width 0.3s ease;
 }
@@ -25,7 +25,7 @@
 
 .navbar-container {
     background-color: rgba(248, 249, 250, 1);
-    transition: background-color 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .navbar-container.transparent {
@@ -45,20 +45,26 @@
     width: auto;
 }
 
+.navbar-brand img {
+    max-height: 120px;
+    width: auto;
+    transition: all 0.5s ease;
+}
+
 
 @media (max-width: 992px) {
     #logoMobile {
         max-width: 150px;
     }
 
-    .navbar-compact {
-        max-height: 80px;
-        min-height: 80px;
+    .navbar-brand img {
+        transition: all 0.5s ease;
     }
 
     .navbar-compact .navbar-brand img {
+        opacity: 0;
         width: 0;
         height: 0;
-        opacity: 0;
+        transition: all 0.5s ease;
     }
 }
