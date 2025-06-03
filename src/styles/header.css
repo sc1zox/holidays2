@@ -25,6 +25,7 @@
 
 .navbar-container {
     background-color: rgba(248, 249, 250, 1);
+    height: var(--navbar-height);
     transition: all 0.5s ease;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .navbar-compact {
-    max-height: 100px;
+    height: var(--navbar-compact-height);
 }
 
 .navbar-compact .navbar-brand img {
@@ -66,5 +67,9 @@
         width: 0;
         height: 0;
         transition: all 0.5s ease;
+    }
+
+    .navbar-auto-size {
+        height: auto;
     }
 }

@@ -66,8 +66,14 @@ import "../styles/header.css"
         if (expandButton && navbarContainer) {
             expandButton.addEventListener('click', () => {
                 navBarOpen = !navBarOpen;
+                if(navBarOpen) {
+                    navbarContainer.classList.add('navbar-auto-size');
+                } else {
+                    navbarContainer.classList.remove('navbar-auto-size');
+                }
                 navbarContainer.classList.remove('navbar-compact');
                 navbarContainer.classList.remove('container-fluid');
+
                 if (!navBarOpen && lastScrollTop > 400) {
                     navbarContainer.classList.add('navbar-compact');
                 }
