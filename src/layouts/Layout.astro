@@ -12,7 +12,7 @@ interface Props {
     customClass?: string,
 }
 
-const {title = 'default', content = 'defaultContent',customClass} = Astro.props;
+const {title = 'default', content = 'defaultContent', customClass} = Astro.props;
 ---
 <!doctype html>
 <html lang="de">
@@ -22,7 +22,8 @@ const {title = 'default', content = 'defaultContent',customClass} = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
     <meta name="description" content={content}/>
     <meta name="author" content="https://github.com/sc1zox"/>
-    <meta name="google-site-verification" content="U60Pfx448qWL4zMRBTCqibt55GFe9mJzO9sUNcO2hT0" />
+    <meta name="google-site-verification" content="U60Pfx448qWL4zMRBTCqibt55GFe9mJzO9sUNcO2hT0"/>
+    <link rel="sitemap" href="/sitemap-index.xml"/>
     <title>{title}</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
