@@ -2,9 +2,10 @@
     color: #212529;
     padding: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 255.05);
     max-width: 800px;
     margin: 2rem auto;
+    background: white;
 }
 
 .song-list ul {
@@ -14,18 +15,18 @@
 }
 
 .song-list li {
-    background: #f8f9fa;
+    background: #ededed;
     margin-bottom: 0.5rem;
     padding: 1rem 1.5rem;
     border-radius: 0.4rem;
     font-size: 1.1rem;
     font-weight: 500;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 4px rgba(255, 255, 255, 0.3);
     transition: background 0.2s;
 }
 
 .song-list li:hover {
-    background: #e2e6ea;
+    background: #919295;
 }
 
 .song-list li::before {

@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import TextBanner from "../components/textBanner.astro";
 ---
-<Layout title="Success Page Title Placeholder" content="Success Page Content Placeholder" fluid={true}>
+<Layout title="Success Page Title Placeholder" content="Success Page Content Placeholder" customClass="container-fluid">
     <div class="d-flex justify-content-center align-items-center flex-column">
-        <TextBanner headline="Glückwunsch!" subline="Ihre Kontaktnachricht wurde erfolgreich abgesendet!"></TextBanner>
+        <TextBanner headline="Glückwunsch!" subline="Ihre Kontaktnachricht wurde erfolgreich abgesendet!" paragraph="Wir werden uns unverzüglich bei Ihnen melden!"></TextBanner>
         <button type="button" class="btn btn-primary mt-3" id="success-back-button"> Zurück</button>
     </div>
 </Layout>

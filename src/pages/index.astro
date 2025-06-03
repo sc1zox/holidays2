@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Card from "../components/card.astro";
 import TextImageSection from "../components/textImageSection.astro";
-import Gerald from "../assets/gerald_profile.png"
-import Bernd from "../assets/bernd_profile.png"
-import Juergen from "../assets/juergen_profile.png"
+import Gerald from "../assets/gerald_profile.webp"
+import Bernd from "../assets/bernd_profile.webp"
+import Juergen from "../assets/juergen_profile.webp"
 import Toast from "../components/toast.astro";
-import TextBanner from "../components/textBanner.astro";
+import Cta from "../components/cta.astro";
 
 interface Event {
     Date: Date;
@@ -43,19 +43,25 @@ const events: Event[] = [
 
 <Layout title="Holidays 2.0 – Cover-Band aus Bobenheim-Roxheim für regionale Feste"
         content="Die Band Holidays 2.0 aus Bobenheim-Roxheim bietet mit ihrem einzigartigen Cover-Programm Musik für jedes Fest in der Pfalz. Jetzt für dein Event buchen!"
-        fluid={true}>
+        customClass="container-fluid">
     <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!"
            destination="/kontakt"/>
-    <TextBanner
-            headline="Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Ihre Live-Cover Band aus Bobenheim-Roxheim in der Pfalz"
-            subline="Sie sind auf der Suche nach einer professionellen Live-Cover-Band für Ihre Veranstaltung oder regionalen Feste in der Vorderpfalz?"
-            paragraph="Ihre Suche hat eine Ende!"/>
-    <h2 class="fs-4">
-    </h2>
-    <h3 class="fs-5">
-    </h3>
+    <div class="animated-background d-flex flex-column text-white text-shadow">
+        <h1 class="display-5 pt-5 text-center">The Holidays 2.0</h1>
+        <div class="d-flex flex-grow-1 gap-xl-5 gap-lg-3 gap-5 justify-content-center align-items-center flex-column">
+            <h2 class="display-6 text-center px-2 responsive-text"> Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Ihre Live-Cover
+                Band aus Bobenheim-Roxheim in der Pfalz</h2>
+            <h3 class="display-7 text-center px-2 responsive-text">Sie sind auf der Suche nach einer professionellen Live-Cover-Band für Ihre
+                Veranstaltung oder regionalen Feste in der Vorderpfalz?</h3>
+            <h4 class="display-8 text-center responsive-text">Ihre Suche hat eine Ende!</h4>
+            <div class="d-flex flex-row gap-3 justify-content-center align-items-center">
+                <Cta id="landing-page-cta" target="/kontakt" text="Buchen Sie uns jetzt!"></Cta>
+               <Cta id="landing-page-event-cta" target="#events" text="Zu den Auftritten"></Cta>
+            </div>
+        </div>
+    </div>
     <section>
-        <h1 class="text-center my-5 py-2 display-6"> The Holidays 2.0 direkt auf einen Blick </h1>
+        <h1 class="text-center my-5 py-2 display-6 custom-headline gradient-text"> The Holidays 2.0 direkt auf einen Blick </h1>
         <TextImageSection headline="Gerald Ingermann" imgSrc={Gerald.src}
                           alt="Porträt von Gerald Ingermann (Keyboard & Gesang)"
                           paragraph="Keyboard & Gesang" orientation="image-right"
@@ -70,14 +76,14 @@ const events: Event[] = [
                           bgColor="bg-light"/>
     </section>
     <div class="d-flex justify-content-center align-items-center py-5">
-        <p class="w-100 w-lg-75 text-center fs-4">
+        <p class="w-100 w-lg-75 text-center fs-2 gradient-text responsive-text">
             Ob Weinfest, Vinothek, Hochzeit, Geburtstag, Oper-Air-Fete oder Firmenevent, wir sorgen für die richtige
             Stimmung.
             Dabei legen wir großen Wert auf den Musikgeschmack der anwesenden Gäste.
             Über ein Engagement Ihrerseits würden wir uns sehr freuen, Sie werden es nicht bereuen.
         </p>
     </div>
-    <section class="bg-dark bg-gradient py-3">
+    <section class="bg-dark bg-gradient py-3" id="events">
         <h2 class="text-center text-white display-6">Auftritte</h2>
         <div class="d-flex flex-column justify-content-center align-items-center">
             {events.map((event) => (

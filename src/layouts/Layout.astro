@@ -9,12 +9,10 @@ import Footer from "../components/footer.astro";
 interface Props {
     title: string,
     content: string,
-    fluid: boolean,
+    customClass?: string,
 }
 
-const {title = 'default', content = 'defaultContent', fluid = false} = Astro.props;
-
-const mainClass = fluid === true ? "container-fluid" : "container"
+const {title = 'default', content = 'defaultContent',customClass} = Astro.props;
 ---
 <!doctype html>
 <html lang="de">
@@ -30,7 +28,7 @@ const mainClass = fluid === true ? "container-fluid" : "container"
 <header>
     <Header/>
 </header>
-<main class={mainClass} id="main-content">
+<main class={customClass} id="main-content">
     <slot/>
 </main>
 <Footer/>

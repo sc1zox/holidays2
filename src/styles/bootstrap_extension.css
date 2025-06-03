@@ -3,6 +3,15 @@
     background-image: -ms-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
 }
 
+.gradient-text {
+    background-image: linear-gradient(to right, #596a8e 0%, #6470ef 50%, #7a77a9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+
 .fs-6 {
     font-size: 1rem !important;
 }
@@ -45,6 +54,10 @@
     font-size: 1.25rem !important;
     font-weight: 300;
     line-height: 1.2;
+}
+
+.custom-headline {
+    font-weight: 400;
 }
 
 
