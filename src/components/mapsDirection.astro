@@ -21,13 +21,13 @@ const { address } = Astro.props;
         });
     });
 
-    function openInGoogleMaps(address) {
+    function openInGoogleMaps(address: string) {
         const link = generateGoogleMapsLink(address);
         console.log(link, address);
         window.open(link, "_blank");
     }
 
-    function generateGoogleMapsLink(address) {
+    function generateGoogleMapsLink(address: string) {
         const baseUrl = "https://www.google.com/maps/search/?api=1&query=";
         return baseUrl + encodeURIComponent(address);
     }

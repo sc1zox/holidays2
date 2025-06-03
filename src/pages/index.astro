@@ -44,7 +44,8 @@ const events: Event[] = [
 <Layout title="Holidays 2.0 – Cover-Band aus Bobenheim-Roxheim für regionale Feste"
         content="Die Band Holidays 2.0 aus Bobenheim-Roxheim bietet mit ihrem einzigartigen Cover-Programm Musik für jedes Fest in der Pfalz. Jetzt für dein Event buchen!"
         fluid={true}>
-    <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!" destination="/kontakt"/>
+    <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!"
+           destination="/kontakt"/>
     <TextBanner
             headline="Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Ihre Live-Cover Band aus Bobenheim-Roxheim in der Pfalz"
             subline="Sie sind auf der Suche nach einer professionellen Live-Cover-Band für Ihre Veranstaltung oder regionalen Feste in der Vorderpfalz?"
@@ -69,7 +70,7 @@ const events: Event[] = [
                           bgColor="bg-light"/>
     </section>
     <div class="d-flex justify-content-center align-items-center py-5">
-        <p class="w-100 w-lg-50 text-center fs-4">
+        <p class="w-100 w-lg-75 text-center fs-4">
             Ob Weinfest, Vinothek, Hochzeit, Geburtstag, Oper-Air-Fete oder Firmenevent, wir sorgen für die richtige
             Stimmung.
             Dabei legen wir großen Wert auf den Musikgeschmack der anwesenden Gäste.
@@ -77,18 +78,17 @@ const events: Event[] = [
         </p>
     </div>
     <section class="bg-dark bg-gradient py-3">
-
         <h2 class="text-center text-white display-6">Auftritte</h2>
         <div class="d-flex flex-column justify-content-center align-items-center">
             {events.map((event) => (
                     <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
                           address={event.Location}
-                          linkToEvent={event.Link}/>
+                          linkToEvent={event.Link}
+                    />
             ))
             }
         </div>
     </section>
-
 </Layout>
 
 
