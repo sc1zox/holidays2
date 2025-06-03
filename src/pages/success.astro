@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextBanner from "../components/textBanner.astro";
+---
+<Layout title="Success Page Title Placeholder" content="Success Page Content Placeholder" fluid={true}>
+    <div class="d-flex justify-content-center align-items-center flex-column">
+        <TextBanner headline="Glückwunsch!" subline="Ihre Kontaktnachricht wurde erfolgreich abgesendet!"></TextBanner>
+        <button type="button" class="btn btn-primary mt-3" id="success-back-button"> Zurück</button>
+    </div>
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('success-back-button');
+        if (btn) {
+            btn.addEventListener('click', () => window.location.href = "/")
+        }
+    })
+</script>
