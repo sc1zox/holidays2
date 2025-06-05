@@ -1,0 +1,138 @@
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    min-height: 500px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: linear-gradient(180deg, #4a6fa1 0%, #6470ef 50%, #8e82a8 100%);
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+.timeline-badge {
+    position: absolute;
+    top: 20px;
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(135deg, #4a6fa1 0%, #6470ef 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.timeline-panel {
+    width: 45%;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-item.left .timeline-badge {
+    right: calc(55% - 40px);
+}
+
+.timeline-item.right .timeline-badge {
+    left: calc(55% - 40px);
+}
+
+.timeline-item.left .timeline-panel {
+    float: left;
+}
+
+.timeline-item.right .timeline-panel {
+    float: right;
+}
+
+.timeline-section {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.event-image {
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover .event-image {
+    filter: brightness(1.1);
+}
+
+.lead {
+    color: #ccc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 992px) {
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-badge {
+        left: 0 !important;
+        width: 60px;
+        font-size: 0.9rem;
+        z-index: 3;
+    }
+
+    .timeline-panel {
+        width: calc(100% - 75px);
+        float: right !important;
+        margin-left: 75px;
+    }
+
+    .timeline-item {
+        margin-bottom: 60px;
+    }
+
+    .timeline-panel .card-img-top {
+        max-height: 180px;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    .timeline-panel .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline-badge {
+        width: 50px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .timeline-panel {
+        width: calc(100% - 65px);
+        margin-left: 65px;
+    }
+
+    .timeline-line {
+        left: 25px;
+    }
+}

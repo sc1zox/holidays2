@@ -1,7 +1,7 @@
 ---
 import "../styles/header.css"
 ---
-<nav class="navbar fixed-top navbar-container navbar-expand-lg bg-light-subtle" >
+<nav class="navbar fixed-top navbar-container navbar-expand-lg bg-light-subtle">
     <div class="container-fluid px-3 py-3 py-lg-0">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto px-2 p-lg-0 d-flex gap-lg-5 gap-3">
@@ -13,6 +13,9 @@ import "../styles/header.css"
                 </li>
                 <li class="nav-item fs-4">
                     <a class="nav-link" href="/repertoire">Repertoire</a>
+                </li>
+                <li class="nav-item fs-4">
+                    <a class="nav-link" href="/timeline">Geschichte</a>
                 </li>
                 <li class="nav-item fs-4">
                     <a class="nav-link" href="/kontakt">Kontakt</a>
@@ -38,70 +41,70 @@ import "../styles/header.css"
 
 <script>
     let navBarOpen: boolean = false;
-    document.addEventListener('DOMContentLoaded', () => {
-        const navbarContainer = document.querySelector('.navbar-container');
-        let lastScrollTop = 0;
-        let scrollUp = false;
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbarContainer = document.querySelector('.navbar-container');
+            let lastScrollTop = 0;
+            let scrollUp = false;
 
-        window.addEventListener('scroll', () => {
-            const upwardAmount = trackUpwardScroll();
+            window.addEventListener('scroll', () => {
+                const upwardAmount = trackUpwardScroll();
 
-            const scrollTop = window.scrollY;
+                const scrollTop = window.scrollY;
 
-            if (scrollTop > 50 && navbarContainer && window.innerWidth > 992) {
-                navbarContainer.classList.add('transparent');
-            } else if (navbarContainer) {
-                navbarContainer.classList.remove('transparent');
-            }
+                if (scrollTop > 50 && navbarContainer && window.innerWidth > 992) {
+                    navbarContainer.classList.add('transparent');
+                    } else if (navbarContainer) {
+                    navbarContainer.classList.remove('transparent');
+                    }
 
-            if (navbarContainer) {
-                if (scrollTop > 100 && !scrollUp && !navBarOpen) {
-                    navbarContainer.classList.add('navbar-compact');
-                } else if (upwardAmount > 50 || scrollTop < 100) {
+                if (navbarContainer) {
+                    if (scrollTop > 100 && !scrollUp && !navBarOpen) {
+                        navbarContainer.classList.add('navbar-compact');
+                        } else if (upwardAmount > 50 || scrollTop < 100) {
+                        navbarContainer.classList.remove('navbar-compact');
+                        }
+                    }
+                });
+
+            const expandButton = document.getElementById('navbarExpand');
+            if (expandButton && navbarContainer) {
+                expandButton.addEventListener('click', () => {
+                    navBarOpen = !navBarOpen;
+                    if (navBarOpen) {
+                        navbarContainer.classList.add('navbar-auto-size');
+                        } else {
+                        setTimeout(() => {
+                            navbarContainer.classList.remove('navbar-auto-size');
+                            },500)
+                        }
+
                     navbarContainer.classList.remove('navbar-compact');
-                }
-            }
-        });
+                    navbarContainer.classList.remove('container-fluid');
 
-        const expandButton = document.getElementById('navbarExpand');
-        if (expandButton && navbarContainer) {
-            expandButton.addEventListener('click', () => {
-                navBarOpen = !navBarOpen;
-                if (navBarOpen) {
-                    navbarContainer.classList.add('navbar-auto-size');
-                } else {
-                    setTimeout(() => {
-                        navbarContainer.classList.remove('navbar-auto-size');
-                    },500)
+                    if (!navBarOpen && lastScrollTop > 400) {
+                        navbarContainer.classList.add('navbar-compact');
+                        }
+                    })
                 }
 
-                navbarContainer.classList.remove('navbar-compact');
-                navbarContainer.classList.remove('container-fluid');
+            function trackUpwardScroll() {
+                const currentPosition = window.scrollY;
+                let upwardScrollAmount = 0;
 
-                if (!navBarOpen && lastScrollTop > 400) {
-                    navbarContainer.classList.add('navbar-compact');
+                if (currentPosition < lastScrollTop) {
+                    upwardScrollAmount = lastScrollTop - currentPosition;
+                    scrollUp = true;
+
+                    if (upwardScrollAmount > 100) {
+                        navbarContainer?.classList.remove('navbar-compact');
+                        }
+                    } else {
+                    scrollUp = false;
+                    }
+
+                lastScrollTop = currentPosition;
+
+                return upwardScrollAmount;
                 }
-            })
-        }
-
-        function trackUpwardScroll() {
-            const currentPosition = window.scrollY;
-            let upwardScrollAmount = 0;
-
-            if (currentPosition < lastScrollTop) {
-                upwardScrollAmount = lastScrollTop - currentPosition;
-                scrollUp = true;
-
-                if (upwardScrollAmount > 100) {
-                    navbarContainer?.classList.remove('navbar-compact');
-                }
-            } else {
-                scrollUp = false;
-            }
-
-            lastScrollTop = currentPosition;
-
-            return upwardScrollAmount;
-        }
-    });
+            });
 </script>
