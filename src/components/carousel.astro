@@ -7,13 +7,13 @@ import auftrittCloseUp from '../assets/auftritt_closeup.webp'
 import asselheimerKerwe1 from '../assets/woibeats.webp'
 import asselheimerKerwe2 from '../assets/woibeats2.webp'
 import rcv from '../assets/rcv.webp'
-import rcv2 from '../assets/rcv2.webp'
+import rcv3 from '../assets/rcv3.webp'
 import hilz2 from '../assets/hilz2.webp'
 import auftrittDirmstein4 from '../assets/dirmstein_kerwe2.webp'
 import auftrittDirmstein5 from '../assets/dirmstein_kerwe3.webp'
 import auftrittDirmstein6 from '../assets/dirmstein_kerwe4.webp'
 ---
-<div id="carousel" class="carousel slide p-3 mb-5" data-bs-ride="carousel">
+<div id="carousel" class="carousel slide p-3 mb-1" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -37,26 +37,18 @@ import auftrittDirmstein6 from '../assets/dirmstein_kerwe4.webp'
                 aria-label="Slide 10"></button>
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="10"
                 aria-label="Slide 11"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="11"
-                aria-label="Slide 12"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="12"
-                aria-label="Slide 13"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="13"
-                aria-label="Slide 14"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="14"
-                aria-label="Slide 15"></button>
 
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <Image src={holidaysGroup} class="d-block w-100 carousel-image" alt="Alle 3 Gruppenmitglieder der Holidays"
-                   format="webp" loading="lazy" decoding="async"/>
+            <Image src={holidaysGroup} class="carousel-image" alt="Alle 3 Gruppenmitglieder der Holidays"
+                   format="webp" loading="lazy" decoding="async"}/>
             <div class="carousel-caption d-none d-md-block">
                 <p>The Holidays 2.0</p>
             </div>
         </div>
         <div class="carousel-item">
-            <Image src={auftrittDirmstein} class="d-block w-100 carousel-image" alt="The Holidays in Dirmstein"
+            <Image src={auftrittDirmstein} class="carousel-image" alt="The Holidays in Dirmstein"
                    format="webp" loading="lazy" decoding="async"/>
             <div class="carousel-caption d-none d-md-block">
                 <p>The Holidays goes Dirmsteiner Kerwe</p>
@@ -64,59 +56,41 @@ import auftrittDirmstein6 from '../assets/dirmstein_kerwe4.webp'
             </div>
         </div>
         <div class="carousel-item">
-            <Image src={asselheimerKerwe1} class="d-block w-100 carousel-image"
+            <Image src={asselheimerKerwe1} class="carousel-image"
                    alt="The Holidays auf der Asselheimer Kerwe" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={asselheimerKerwe2} class="d-block w-100 carousel-image"
+            <Image src={asselheimerKerwe2} class="carousel-image"
                    alt="The Holidays auf der Asselheimer Kerwe" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={auftrittDirmstein4} class="d-block w-100 carousel-image"
+            <Image src={auftrittDirmstein4} class="carousel-image"
                    alt="The Holidays auf der Dirmsteiner Kerwe bei Nacht" format="webp" loading="lazy"
                    decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={auftrittDirmstein5} class="d-block w-100 carousel-image"
+            <Image src={auftrittDirmstein5} class="carousel-image"
                    alt="The Holidays auf der Dirmsteiner Kerwe" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={auftrittDirmstein6} class="d-block w-100 carousel-image"
+            <Image src={auftrittDirmstein6} class="carousel-image"
                    alt="The Holidays auf der Dirmsteiner Kerwe" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={auftrittCloseUp} class="d-block w-100 carousel-image"
+            <Image src={auftrittCloseUp} class="carousel-image"
                    alt="The Holidays zusammen auf der Bühne" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={rcv} class="d-block w-100 carousel-image"
+            <Image src={rcv} class="carousel-image"
                    alt="The Holidays beim RCV" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={rcv2} class="d-block w-100 carousel-image"
+            <Image src={rcv3} class="carousel-image"
                    alt="The Holidays beim RCV auf der Bühne" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
         <div class="carousel-item">
-            <Image src={hilz2} class="d-block w-100 carousel-image"
+            <Image src={hilz2} class="carousel-image"
                    alt="The Holidays bei Klaus Hilz auf der Bühne" format="webp" loading="lazy" decoding="async"/>
-            <div class="carousel-caption d-none d-md-block">
-            </div>
         </div>
 
     </div>
