@@ -108,7 +108,7 @@
     }
 
     .responsive-headline-light {
-        font-size: 1.3rem !important;
+        font-size: 2rem !important;
     }
 }
 
@@ -126,7 +126,7 @@
     }
 
     .responsive-headline-light {
-        font-size: 1.9rem !important;
+        font-size: 2.1rem !important;
     }
 }
 
@@ -144,7 +144,7 @@
     }
 
     .responsive-headline-light {
-        font-size: 2rem !important;
+        font-size: 2.3rem !important;
     }
 }
 
@@ -178,7 +178,7 @@
     }
 
     .responsive-headline-light {
-        font-size: 2.2rem !important;
+        font-size: 3rem !important;
     }
 }
 
@@ -235,7 +235,7 @@
     }
 
     .responsive-text {
-        font-size: 2rem !important;
+        font-size: 2.5rem !important;
     }
 
     .responsive-headline {
@@ -247,16 +247,36 @@
     }
 
     .responsive-headline-light {
-        font-size: 3rem !important;
+        font-size: 4rem !important;
     }
 }
 
-@media (max-height: 700px) {
+@media only screen and (orientation: landscape) and (max-height: 800px) and (max-width: 992px) {
     .gaps {
         gap: 1rem !important;
     }
     .responsive-text {
-        font-size: 1.2rem !important;
+        font-size: 1.8rem !important;
+    }
+
+    .responsive-headline {
+        font-size: 4rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.5rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 2.5rem !important;
+    }
+}
+@media only screen and (orientation: landscape) and (max-height: 600px) and (max-width: 992px) {
+    .gaps {
+        gap: 0.8rem !important;
+    }
+    .responsive-text {
+        font-size: 1.5rem !important;
     }
 
     .responsive-headline {
@@ -264,50 +284,10 @@
     }
 
     .responsive-text-light {
-        font-size: 1.1rem !important;
-    }
-
-    .responsive-headline-light {
-        font-size: 1.8rem !important;
-    }
-}
-@media only screen and (orientation: landscape) and (max-height: 800px) and (max-width: 992px) {
-    .gaps {
-        gap: 0.8rem !important;
-    }
-    .responsive-text {
-        font-size: 1rem !important;
-    }
-
-    .responsive-headline {
-        font-size: 2rem !important;
-    }
-
-    .responsive-text-light {
-        font-size: 0.9rem !important;
-    }
-
-    .responsive-headline-light {
-        font-size: 1.8rem !important;
-    }
-}
-@media only screen and (orientation: landscape) and (max-height: 600px) and (max-width: 992px) {
-    .gaps {
-        gap: 0.5rem !important;
-    }
-    .responsive-text {
-        font-size: 1rem !important;
-    }
-
-    .responsive-headline {
-        font-size: 1.5rem !important;
-    }
-
-    .responsive-text-light {
-        font-size: 0.9rem !important;
-    }
-
-    .responsive-headline-light {
         font-size: 1.3rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 2.2rem !important;
     }
 }
