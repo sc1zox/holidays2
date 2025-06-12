@@ -38,70 +38,71 @@ import "../styles/header.css"
 
 <script>
     let navBarOpen: boolean = false;
-        document.addEventListener('DOMContentLoaded', () => {
-            const navbarContainer = document.querySelector('.navbar-container');
-            let lastScrollTop = 0;
-            let scrollUp = false;
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbarContainer = document.querySelector('.navbar-container');
+        let lastScrollTop = 0;
+        let scrollUp = false;
 
-            window.addEventListener('scroll', () => {
-                const upwardAmount = trackUpwardScroll();
+        window.addEventListener('scroll', () => {
+            const upwardAmount = trackUpwardScroll();
 
-                const scrollTop = window.scrollY;
+            const scrollTop = window.scrollY;
+            if (scrollTop > 50 && navbarContainer && window.innerWidth > 992) {
+                navbarContainer.classList.add('transparent');
+            } else if (navbarContainer) {
+                navbarContainer.classList.remove('transparent');
+            }
 
-                if (scrollTop > 50 && navbarContainer && window.innerWidth > 992) {
-                    navbarContainer.classList.add('transparent');
-                    } else if (navbarContainer) {
-                    navbarContainer.classList.remove('transparent');
-                    }
-
-                if (navbarContainer) {
-                    if (scrollTop > 100 && !scrollUp && !navBarOpen) {
-                        navbarContainer.classList.add('navbar-compact');
-                        } else if (upwardAmount > 50 || scrollTop < 100) {
-                        navbarContainer.classList.remove('navbar-compact');
-                        }
-                    }
-                });
-
-            const expandButton = document.getElementById('navbarExpand');
-            if (expandButton && navbarContainer) {
-                expandButton.addEventListener('click', () => {
-                    navBarOpen = !navBarOpen;
-                    if (navBarOpen) {
-                        navbarContainer.classList.add('navbar-auto-size');
-                        } else {
-                        setTimeout(() => {
-                            navbarContainer.classList.remove('navbar-auto-size');
-                            },500)
-                        }
-
+            if (navbarContainer) {
+                if (scrollTop > 100 && !scrollUp && !navBarOpen) {
+                    navbarContainer.classList.add('navbar-compact');
+                } else if (!scrollUp && !navBarOpen && (screen.orientation.type === 'landscape-primary' || screen.orientation.type === 'landscape-secondary')) {
+                    navbarContainer.classList.add('navbar-compact');
+                } else if (upwardAmount > 50 || scrollTop < 100) {
                     navbarContainer.classList.remove('navbar-compact');
-                    navbarContainer.classList.remove('container-fluid');
+                }
+            }
+        });
 
-                    if (!navBarOpen && lastScrollTop > 400) {
-                        navbarContainer.classList.add('navbar-compact');
-                        }
-                    })
+        const expandButton = document.getElementById('navbarExpand');
+        if (expandButton && navbarContainer) {
+            expandButton.addEventListener('click', () => {
+                navBarOpen = !navBarOpen;
+                if (navBarOpen) {
+                    navbarContainer.classList.add('navbar-auto-size');
+                } else {
+                    setTimeout(() => {
+                        navbarContainer.classList.remove('navbar-auto-size');
+                    }, 500)
                 }
 
-            function trackUpwardScroll() {
-                const currentPosition = window.scrollY;
-                let upwardScrollAmount = 0;
+                navbarContainer.classList.remove('navbar-compact');
+                navbarContainer.classList.remove('container-fluid');
 
-                if (currentPosition < lastScrollTop) {
-                    upwardScrollAmount = lastScrollTop - currentPosition;
-                    scrollUp = true;
-
-                    if (upwardScrollAmount > 100) {
-                        navbarContainer?.classList.remove('navbar-compact');
-                        }
-                    } else {
-                    scrollUp = false;
-                    }
-
-                lastScrollTop = currentPosition;
-
-                return upwardScrollAmount;
+                if (!navBarOpen && lastScrollTop > 400) {
+                    navbarContainer.classList.add('navbar-compact');
                 }
-            });
+            })
+        }
+
+        function trackUpwardScroll() {
+            const currentPosition = window.scrollY;
+            let upwardScrollAmount = 0;
+
+            if (currentPosition < lastScrollTop) {
+                upwardScrollAmount = lastScrollTop - currentPosition;
+                scrollUp = true;
+
+                if (upwardScrollAmount > 100) {
+                    navbarContainer?.classList.remove('navbar-compact');
+                }
+            } else {
+                scrollUp = false;
+            }
+
+            lastScrollTop = currentPosition;
+
+            return upwardScrollAmount;
+        }
+    });
 </script>
