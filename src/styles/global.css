@@ -1,3 +1,11 @@
+:root {
+    --company-primary: #048aa2;
+    --company-primary-light: #54949F;
+    --company-primary-dark: #006a7e;
+    --company-text: #ffffff;
+}
+
+
 html,
 body {
     margin: 0;

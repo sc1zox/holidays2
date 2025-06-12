@@ -7,6 +7,8 @@ import Bernd from "../assets/bernd_profile.webp"
 import Juergen from "../assets/juergen_profile.webp"
 import Toast from "../components/toast.astro";
 import Cta from "../components/cta.astro";
+import gondelFestPoster from "../assets/gondelfest_plakat.webp"
+import type { ImageMetadata } from 'astro';
 
 interface Event {
     Date: Date;
@@ -14,6 +16,7 @@ interface Event {
     Event: string,
     Location: string;
     Link: string;
+    EventPoster?: ImageMetadata;
 }
 
 const events: Event[] = [
@@ -23,6 +26,7 @@ const events: Event[] = [
         Event: "Gondelfest in Bobenheim-Roxheim",
         Location: "Gondelfest in Bobenheim-Roxheim (Festplatz am Altrhein)",
         Link: "https://www.bobenheim-roxheim.de/gemeinde_bobenheim_roxheim/B%C3%BCrgerservice/Veranstaltungskalender/2025/04.07.2025%20-%2007.07.2025%20Gondelfest/",
+        EventPoster: gondelFestPoster
     },
     {
         Date: new Date("2025-09-20"),
@@ -47,21 +51,33 @@ const events: Event[] = [
     <Toast message="Wurde ihr Interesse geweckt? Dann kontaktieren Sie uns doch direkt" title="Hey!"
            destination="/kontakt"/>
     <div class="animated-background d-flex flex-column text-white text-shadow">
-        <h1 class="display-5 pt-5 text-center">The Holidays 2.0</h1>
-        <div class="d-flex flex-grow-1 gap-xl-5 gap-lg-3 gap-5 justify-content-center align-items-center flex-column">
-            <h2 class="display-6 text-center px-2 responsive-text">Wir freuen uns, dass Sie den Weg zu uns gefunden
-                haben. Ihre Live-Cover-Band aus Bobenheim-Roxheim mit langjähriger Bühnenerfahrung.</h2>
-            <h3 class="display-7 text-center px-2 responsive-text">Sie sind auf der Suche nach einer professionellen
-                Live-Cover-Band mit 3-stimmigen Gesang für Ihre Veranstaltung oder regionalen Festivals?</h3>
-            <h4 class="display-8 text-center responsive-text">Ihre Suche hat nun ein Ende!</h4>
-            <div class="d-flex flex-row gap-3 justify-content-center align-items-center">
-                <Cta id="landing-page-cta" target="/kontakt" text="Buchen Sie uns jetzt!"></Cta>
-                <Cta id="landing-page-event-cta" target="#events" text="Zu den Auftritten"></Cta>
+        <div class="container h-100 d-flex align-items-center">
+            <div class="d-flex flex-column gap-sm-2 gap-md-5 gap-1 gaps h-75 text-center">
+
+                <h1 class="display-1 responsive-headline mb-lg-5 text-center">The Holidays 2.0</h1>
+
+                <div class="d-flex flex-grow-1 justify-content-center gap-sm-3 gap-4 gaps align-items-center flex-column">
+
+                    <h2 class="display-6 text-center px-2 responsive-text">Wir freuen uns, dass Sie den Weg zu uns
+                        gefunden
+                        haben. Ihre Live-Cover-Band aus Bobenheim-Roxheim mit langjähriger Bühnenerfahrung.</h2>
+
+                    <h3 class="display-7 text-center px-2 responsive-text">Sie sind auf der Suche nach einer
+                        professionellen
+                        Live-Cover-Band mit 3-stimmigen Gesang für Ihre Veranstaltung oder regionalen Festivals?</h3>
+
+                    <h4 class="display-8 text-center responsive-text">Ihre Suche hat nun ein Ende!</h4>
+
+                    <div class="d-flex flex-row gap-sm-5 gap-lg-5 gap-3 mt-lg-5 justify-content-center align-items-center">
+                        <Cta id="landing-page-cta" target="/kontakt" text="Buchen Sie uns jetzt!"></Cta>
+                        <Cta id="landing-page-event-cta" target="#events" text="Zu den Auftritten"></Cta>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <section>
-        <h1 class="text-center my-5 py-2 display-6 custom-headline gradient-text"> The Holidays 2.0 auf einen
+        <h1 class="text-center my-5 py-2 display-3 responsive-headline-light custom-headline gradient-text"> The Holidays 2.0 auf einen
             Blick: </h1>
         <TextImageSection headline="Gerald Ingermann" imgSrc={Gerald}
                           alt="Porträt von Gerald Ingermann (Keyboard & Gesang)"
@@ -76,8 +92,8 @@ const events: Event[] = [
                           paragraph="Gitarre & Gesang" orientation="image-right"
                           bgColor="bg-light"/>
     </section>
-    <div class="d-flex justify-content-center align-items-center py-5">
-        <p class="w-100 w-lg-75 text-center fs-2 gradient-text responsive-text">
+    <div class="d-flex justify-content-center align-items-center py-5 px-1 py-3">
+        <p class="w-100 w-lg-75 text-center gradient-text responsive-text">
             Ob Weinfest, Vinothek, Hochzeit, Geburtstag, Oper-Air-Fete oder Firmenevent, wir sorgen für die richtige
             Stimmung.
             Dabei legen wir großen Wert auf die Liedauswahl und unseren Chorgesang.
@@ -91,6 +107,7 @@ const events: Event[] = [
                     <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
                           address={event.Location}
                           linkToEvent={event.Link}
+                          eventPoster={event.EventPoster}
                     />
             ))
             }

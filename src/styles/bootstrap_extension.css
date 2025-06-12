@@ -1,10 +1,26 @@
+.btn-company {
+    --bs-btn-color: var(--company-text);
+    --bs-btn-bg: var(--company-primary);
+    --bs-btn-border-color: var(--company-primary);
+    --bs-btn-hover-color: var(--company-text);
+    --bs-btn-hover-bg: var(--company-primary-dark);
+    --bs-btn-hover-border-color: var(--company-primary-dark);
+    --bs-btn-focus-shadow-rgb: 84, 148, 159;
+    --bs-btn-active-color: var(--company-text);
+    --bs-btn-active-bg: var(--company-primary-dark);
+    --bs-btn-active-border-color: var(--company-primary-dark);
+    --bs-btn-disabled-color: var(--company-text);
+    --bs-btn-disabled-bg: var(--company-primary-light);
+    --bs-btn-disabled-border-color: var(--company-primary-light);
+}
+
+
 .bg-gradient-company-color {
-    background-image: -webkit-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
-    background-image: -ms-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+    background-image: -webkit-linear-gradient(0deg, var(--company-primary) 0%, var(--company-primary-light) 100%);
 }
 
 .gradient-text {
-    background-image: linear-gradient(to right, #596a8e 0%, #6470ef 50%, #7a77a9 100%);
+    background-image: linear-gradient(to right, var(--company-primary-light) 0%, var(--company-primary) 50%, var(--company-primary-dark) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -62,30 +78,72 @@
 
 
 .responsive-text {
-    font-size: 1rem;
+    font-size: 1.3rem !important;
 }
 
 .responsive-headline {
-    font-size: 1.5rem;
+    font-size: 3rem !important;
+}
+
+.responsive-text-light {
+    font-size: 1rem !important;
+}
+
+.responsive-headline-light {
+    font-size: 1.8rem !important;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .responsive-text {
         font-size: 1.3rem !important;
     }
 
     .responsive-headline {
-        font-size: 1.5rem !important;
+        font-size: 2.5rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 1.3rem !important;
+    }
+}
+
+@media (min-width: 400px) {
+    .responsive-text {
+        font-size: 1.3rem !important;
+    }
+
+    .responsive-headline {
+        font-size: 3.5rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.1rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 1.9rem !important;
     }
 }
 
 @media (min-width: 768px) {
     .responsive-text {
-        font-size: 1.75rem !important;
+        font-size: 1.6rem !important;
     }
 
     .responsive-headline {
+        font-size: 4rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.2rem !important;
+    }
+
+    .responsive-headline-light {
         font-size: 2rem !important;
     }
 }
@@ -108,11 +166,19 @@
     }
 
     .responsive-text {
-        font-size: 2rem !important;
+        font-size: 1.6rem !important;
     }
 
     .responsive-headline {
-        font-size: 2.8rem !important;
+        font-size: 4rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.3rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 2.2rem !important;
     }
 }
 
@@ -134,11 +200,19 @@
     }
 
     .responsive-text {
-        font-size: 2rem !important;
+        font-size: 1.8rem !important;
     }
 
     .responsive-headline {
-        font-size: 2.8rem !important;
+        font-size: 4rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.4rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 2.5rem !important;
     }
 }
 
@@ -165,6 +239,35 @@
     }
 
     .responsive-headline {
-        font-size: 2.8rem !important;
+        font-size: 6rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.5rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 3rem !important;
+    }
+}
+
+@media (max-height: 700px) {
+    .gaps {
+        gap: 1rem !important;
+    }
+    .responsive-text {
+        font-size: 1.2rem !important;
+    }
+
+    .responsive-headline {
+        font-size: 3rem !important;
+    }
+
+    .responsive-text-light {
+        font-size: 1.1rem !important;
+    }
+
+    .responsive-headline-light {
+        font-size: 1.8rem !important;
     }
 }

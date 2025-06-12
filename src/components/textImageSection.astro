@@ -12,15 +12,15 @@ interface Props {
 }
 const {headline, imgSrc, alt, paragraph, orientation, bgColor} = Astro.props;
 const sectionClass = orientation === "image-left"
-    ? "container w-100 d-flex justify-content-between align-items-center flex-row flex-row-reverse p-0 mb-5 mb-lg-0"
-    : "container w-100 d-flex justify-content-between align-items-center flex-row p-0 mb-5 mb-lg-0";
+    ? "container w-lg-50 w-100 d-flex justify-content-between align-items-center flex-row flex-row-reverse p-0 mb-5 mb-lg-0"
+    : "container w-lg-50 w-100 d-flex justify-content-between align-items-center flex-row p-0 mb-5 mb-lg-0";
 const combinedClass = `my-1 ${bgColor} bg-gradient`
 ---
 <div class={combinedClass}>
     <section class={sectionClass}>
         <div class="d-flex d-flex justify-content-start align-items-center flex-column p-2">
-            <h2 class="responsive-headline">{headline}</h2>
-            <p class="responsive-text">{paragraph}</p>
+            <h2 class="display-5">{headline}</h2>
+            <p class="fs-4">{paragraph}</p>
         </div>
         <Image src={imgSrc} alt={alt} class="rounded img-fluid w-25" format="webp" loading="lazy" decoding="async"/>
     </section>

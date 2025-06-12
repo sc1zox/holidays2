@@ -8,7 +8,7 @@ const {text, id, target} = Astro.props;
 
 ---
 
-<button class="btn btn-secondary" id={id}>{text}</button>
+<button class="btn btn-company btn-lg responsive-text-light" id={id}>{text}</button>
 
 <script define:vars={{target,id}}>
     document.addEventListener('DOMContentLoaded', () => {

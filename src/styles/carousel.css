@@ -1,5 +1,19 @@
 .carousel-image {
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
     width: 100%;
+    max-height: 75vh;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--company-primary-dark);
+    height: 0.5vh;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: transparent;
+    filter: invert(40%) sepia(74%) saturate(1103%) hue-rotate(165deg) brightness(91%) contrast(102%);
+    width: 4vh;
+    height: 4vh;
 }

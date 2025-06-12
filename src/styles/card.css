@@ -25,6 +25,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card button a {
+    color: #fff;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 992px){
     .card {
         max-width: 350px;

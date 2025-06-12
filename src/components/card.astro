@@ -1,23 +1,31 @@
 ---
 import MapsDirection from "./mapsDirection.astro";
 import '../styles/card.css'
+import type { ImageMetadata } from "astro";
 interface Props {
     header: string,
     title: string,
     address: string,
     linkToEvent: string,
+    eventPoster?: ImageMetadata,
 }
-const {header,title,address,linkToEvent} = Astro.props;
+const {header, title, address, linkToEvent, eventPoster} = Astro.props;
 ---
 <div class="card text-center my-5 w-lg-50">
     <div class="card-body">
         <div class="py-2">
-        {header}
+            {header}
         </div>
         <h5 class="card-title">{title}</h5>
     </div>
-<div class="card-footer text-muted d-flex gap-5 justify-content-center align-items-center">
-        <a href={linkToEvent} class="link-info">Homepage</a> <MapsDirection address={address} />
+    <div class="card-footer text-muted d-flex gap-5 justify-content-center align-items-center flex-column flex-lg-row py-3">
+        <a href={linkToEvent} class="link-info">Homepage</a>
+        <MapsDirection address={address}/>
+        {eventPoster && (
+                <button class="btn btn-company">
+                    <a href={eventPoster.src} target="_blank"> Ablauf herunterladen</a>
+                </button>
+        )}
     </div>
 </div>
 
