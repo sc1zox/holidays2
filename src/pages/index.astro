@@ -101,7 +101,7 @@ const events: Event[] = [
         </p>
     </div>
     <section class="bg-dark bg-gradient py-3" id="events">
-        <h2 class="text-center text-white display-6">Auftritte</h2>
+        <h2 class="text-center text-white display-6 mt-5">Auftritte</h2>
         <div class="d-flex flex-column justify-content-center align-items-center">
             {events.map((event) => (
                     <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}

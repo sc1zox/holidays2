@@ -18,12 +18,12 @@ const {header, title, address, linkToEvent, eventPoster} = Astro.props;
         </div>
         <h5 class="card-title">{title}</h5>
     </div>
-    <div class="card-footer text-muted d-flex gap-5 justify-content-center align-items-center flex-column flex-lg-row py-3">
+    <div class="card-footer text-muted d-flex gap-lg-5 gap-2 justify-content-center align-items-center flex-column flex-lg-row py-3">
         <a href={linkToEvent} class="link-info">Homepage</a>
         <MapsDirection address={address}/>
         {eventPoster && (
                 <button class="btn btn-company">
-                    <a href={eventPoster.src} target="_blank"> Ablauf herunterladen</a>
+                    <a href={eventPoster.src} target="_blank"> Programm herunterladen</a>
                 </button>
         )}
     </div>
