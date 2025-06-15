@@ -104,7 +104,7 @@
     }
 
     .responsive-text-light {
-        font-size: 1rem !important;
+        font-size: 1.2rem !important;
     }
 
     .responsive-headline-light {
@@ -122,7 +122,7 @@
     }
 
     .responsive-text-light {
-        font-size: 1.1rem !important;
+        font-size: 1.3rem !important;
     }
 
     .responsive-headline-light {
@@ -144,7 +144,7 @@
     }
 
     .responsive-headline-light {
-        font-size: 2.3rem !important;
+        font-size: 2.2rem !important;
     }
 }
 
@@ -178,7 +178,7 @@
     }
 
     .responsive-headline-light {
-        font-size: 3rem !important;
+        font-size: 2.3rem !important;
     }
 }
 
@@ -208,7 +208,7 @@
     }
 
     .responsive-text-light {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
     }
 
     .responsive-headline-light {
@@ -243,18 +243,19 @@
     }
 
     .responsive-text-light {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
     }
 
     .responsive-headline-light {
-        font-size: 4rem !important;
+        font-size: 2.8rem !important;
+    }
+
+    .text-lg-nowrap {
+        text-wrap: nowrap !important;
     }
 }
 
 @media only screen and (orientation: landscape) and (max-height: 800px) and (max-width: 992px) {
-    .gaps {
-        gap: 1rem !important;
-    }
     .responsive-text {
         font-size: 1.8rem !important;
     }
@@ -272,9 +273,6 @@
     }
 }
 @media only screen and (orientation: landscape) and (max-height: 600px) and (max-width: 992px) {
-    .gaps {
-        gap: 0.8rem !important;
-    }
     .responsive-text {
         font-size: 1.5rem !important;
     }
