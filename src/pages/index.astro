@@ -8,7 +8,7 @@ import Juergen from "../assets/juergen_profile.webp"
 import Toast from "../components/toast.astro";
 import Cta from "../components/cta.astro";
 import gondelFestPoster from "../assets/gondelfest_plakat.webp"
-import type { ImageMetadata } from 'astro';
+import type {ImageMetadata} from 'astro';
 
 interface Event {
     Date: Date;
@@ -20,6 +20,14 @@ interface Event {
 }
 
 const events: Event[] = [
+    {
+        Date: new Date("2025-07-04"),
+        Time: "19:30",
+        Event: "Gondelfest in Bobenheim-Roxheim",
+        Location: "Gondelfest in Bobenheim-Roxheim (Festplatz am Altrhein)",
+        Link: "https://www.bobenheim-roxheim.de/gemeinde_bobenheim_roxheim/B%C3%BCrgerservice/Veranstaltungskalender/2025/04.07.2025%20-%2007.07.2025%20Gondelfest/",
+        EventPoster: gondelFestPoster
+    },
     {
         Date: new Date("2025-09-20"),
         Time: "19:30",
@@ -69,7 +77,8 @@ const events: Event[] = [
         </div>
     </div>
     <section>
-        <h1 class="text-center my-5 py-2 display-3 responsive-headline-light custom-headline gradient-text"> The Holidays 2.0 auf einen
+        <h1 class="text-center my-5 py-2 display-3 responsive-headline-light custom-headline gradient-text"> The
+            Holidays 2.0 auf einen
             Blick: </h1>
         <TextImageSection headline="Gerald Ingermann" imgSrc={Gerald}
                           alt="Porträt von Gerald Ingermann (Keyboard & Gesang)"
@@ -93,15 +102,30 @@ const events: Event[] = [
         </p>
     </div>
     <section class="bg-dark bg-gradient py-3" id="events">
-        <h2 class="text-center text-white display-6 mt-5">Auftritte</h2>
+        <h2 class="text-center text-white display-6 mt-5">Aktuelle Auftritte</h2>
         <div class="d-flex flex-column justify-content-center align-items-center">
-            {events.map((event) => (
-                    <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
-                          address={event.Location}
-                          linkToEvent={event.Link}
-                          eventPoster={event.EventPoster}
-                    />
-            ))
+            {events
+                .filter((e: Event) => e.Date >= new Date())
+                .map((event: Event) => (
+                        <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
+                              address={event.Location}
+                              linkToEvent={event.Link}
+                              eventPoster={event.EventPoster}
+                        />
+                ))
+            }
+        </div>
+        <h2 class="text-center text-white display-6 mt-5">Vergangene Auftritte</h2>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            {events
+                .filter((e: Event) => e.Date < new Date())
+                .map((event: Event) => (
+                        <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
+                              address={event.Location}
+                              linkToEvent={event.Link}
+                              eventPoster={event.EventPoster}
+                        />
+                ))
             }
         </div>
     </section>
