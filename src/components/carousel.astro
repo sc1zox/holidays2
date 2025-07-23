@@ -11,6 +11,8 @@ import rcv3 from '../assets/rcv3.webp'
 import auftrittDirmstein4 from '../assets/dirmstein_kerwe2.webp'
 import auftrittDirmstein5 from '../assets/dirmstein_kerwe3.webp'
 import auftrittDirmstein6 from '../assets/dirmstein_kerwe4.webp'
+import gondelfest1 from '../assets/gondelfest1.webp'
+import gondelfest2 from '../assets/gondelfest2.webp'
 ---
 <div id="carousel" class="carousel slide p-3 mb-1" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -34,22 +36,34 @@ import auftrittDirmstein6 from '../assets/dirmstein_kerwe4.webp'
                 aria-label="Slide 9"></button>
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="9"
                 aria-label="Slide 10"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="10"
+                aria-label="Slide 11"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="11"
+                aria-label="Slide 12"></button>
 
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <Image src={holidaysGroup} class="carousel-image" alt="Alle 3 Gruppenmitglieder der Holidays"
-                   format="webp" loading="lazy" decoding="async"}/>
+            <Image src={gondelfest1} class="carousel-image" alt="The Holidays auf dem Gondelfest"
+                   format="webp" loading="lazy" decoding="async"/>
             <div class="carousel-caption d-none d-md-block">
-                <p>The Holidays 2.0</p>
+                <p>The Holidays 2.0 auf dem Gondelfest 2025</p>
+                <p>Links Jürgen, Mitte Bernd, Rechts Gerald</p>
             </div>
+        </div>
+        <div class="carousel-item">
+            <Image src={gondelfest2} class="carousel-image" alt="The Holidays auf dem Gondelfest"
+                   format="webp" loading="lazy" decoding="async"/>
+        </div>
+        <div class="carousel-item">
+            <Image src={holidaysGroup} class="carousel-image" alt="Alle 3 Gruppenmitglieder der Holidays"
+                   format="webp" loading="lazy" decoding="async" }/>
         </div>
         <div class="carousel-item">
             <Image src={auftrittDirmstein} class="carousel-image" alt="The Holidays in Dirmstein"
                    format="webp" loading="lazy" decoding="async"/>
             <div class="carousel-caption d-none d-md-block">
                 <p>The Holidays goes Dirmsteiner Kerwe</p>
-                <p>Links Jürgen, Mitte Bernd, Rechts Gerald</p>
             </div>
         </div>
         <div class="carousel-item">
