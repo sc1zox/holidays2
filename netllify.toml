@@ -1,0 +1,17 @@
+﻿[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/index.php"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://holidays2punkt0.de/*"
+to = "https://holidays2punkt0.de/:splat"
+status = 301
+force = true
