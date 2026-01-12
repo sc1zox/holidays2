@@ -24,6 +24,7 @@
 - Kung Fu Fighting & Baby, I’d love you to want me
 - Let your love flow
 - Living next door to Alice
+- Life is a Rollercoaster
 - Long fellow Serenade
 - Love is in the air
 - Major Tom Medley   (Neue Deutsche Welle)
@@ -44,6 +45,7 @@
 - Tornero
 - Tränen lügen nicht
 - Über den Wolken
+- Walk of Life
 - Westernhagen Medley
 - When you're in love with a beautiful woman
 - Wunder gibt es immer wieder
