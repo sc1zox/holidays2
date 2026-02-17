@@ -116,7 +116,11 @@ const events: Event[] = [
         <h2 class="text-center text-white display-6 mt-5">Aktuelle Auftritte</h2>
         <div class="d-flex flex-column justify-content-center align-items-center">
             {events
-                .filter((e: Event) => e.Date >= new Date())
+                .filter((e: Event) => {
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    return e.Date >= today;
+                })
                 .map((event: Event) => (
                         <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
                               address={event.Location}
@@ -129,7 +133,11 @@ const events: Event[] = [
         <h2 class="text-center text-white display-6 mt-5">Vergangene Auftritte</h2>
         <div class="d-flex flex-column justify-content-center align-items-center">
             {events
-                .filter((e: Event) => e.Date < new Date())
+                .filter((e: Event) => {
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    return e.Date < today;
+                })
                 .map((event: Event) => (
                         <Card header={event.Date.toLocaleDateString('de-DE') + ' ' + event.Time} title={event.Event}
                               address={event.Location}
