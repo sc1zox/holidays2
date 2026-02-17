@@ -9,6 +9,7 @@ import Toast from "../components/toast.astro";
 import Cta from "../components/cta.astro";
 import gondelFestPoster from "../assets/gondelfest_plakat.webp"
 import bobenheimKerwePoster from "../assets/bobenheim_kerwe_poster.webp"
+import altroiCarnvalPoster from "../assets/rcvPoster.webp"
 import type {ImageMetadata} from 'astro';
 
 interface Event {
@@ -49,7 +50,8 @@ const events: Event[] = [
         Time: "16:00",
         Event: "Fasching-Dienstag beim Roxheimer Carneval-Verein (Schnookewoog)",
         Location: "Bobenheim-Roxheim, Moerscher Straße 2a",
-        Link: "https://www.altrhoischnooke.net/termine/"
+        Link: "https://www.altrhoischnooke.net/termine/",
+        EventPoster: altroiCarnvalPoster,
     }
 ];
 ---
