@@ -16,6 +16,7 @@ import gondelfest2 from '../assets/gondelfest2.webp'
 import heuchelheim1 from '../assets/heuchelheim_kerwe.webp'
 import heuchelheim2 from '../assets/heuchelheim_kerwe_2.webp'
 import heuchelheim3 from '../assets/heuchelheim_kerwe_fans.webp'
+import rcv26 from '../assets/rcv26.webp'
 ---
 <div id="carousel" class="carousel slide p-3 mb-1" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -49,6 +50,8 @@ import heuchelheim3 from '../assets/heuchelheim_kerwe_fans.webp'
                 aria-label="Slide 14"></button>
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="14"
                 aria-label="Slide 15"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="15"
+                aria-label="Slide 16"></button>
 
     </div>
     <div class="carousel-inner">
@@ -59,6 +62,10 @@ import heuchelheim3 from '../assets/heuchelheim_kerwe_fans.webp'
                 <p>The Holidays 2.0 auf dem Gondelfest 2025</p>
                 <p>Links Jürgen, Mitte Bernd, Rechts Gerald</p>
             </div>
+        </div>
+        <div class="carousel-item">
+            <Image src={rcv26} class="carousel-image"
+                   alt="The Holidays beim RCV auf der Bühne 2026" format="webp" loading="lazy" decoding="async"/>
         </div>
         <div class="carousel-item">
             <Image src={heuchelheim1} class="carousel-image" alt="The Holidays auf der Heuchelheimer Kerwe"
